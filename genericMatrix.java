@@ -1,8 +1,6 @@
 import java.util.Scanner;
-import java.lang.Integer;
-import java.lang.reflect.Array;
-import java.util.List;
-import java.util.Collection;
+import java.lang.*;
+import java.util.ArrayList;
 
 public class genericMatrix <T extends Number> {
 	
@@ -28,8 +26,9 @@ public class genericMatrix <T extends Number> {
 			System.out.println("Enter the amount of inputs you specified for columns! Please be sure to use spaces between your inputs.");
 			String[] line = sc.nextLine().split(" ");
 			for(int j = 0; j < n; j++){
-				//this.data[i][j] = (T) line[j];
-
+				Double intermediate = new Double (line[j]);
+				Double doubleVal = intermediate.doubleValue();
+				this.data[i][j] = (T) doubleVal;
 			}
 	
 		}
@@ -58,8 +57,10 @@ public class genericMatrix <T extends Number> {
 		genericMatrix<T> addResult = new genericMatrix<T>(rows, columns);
 		for(int i = 0; i < rows; i++){
 			for(int j = 0; j < columns; j++){
-				addResult.data[i][j] = matrix1.data[i][j] + matrix2.data[i][j];
+
 				
+				Double theResult = (matrix1.data[i][j]).doubleValue() + (matrix2.data[i][j]).doubleValue();
+				addResult.data[i][j] = (T) theResult;
 			}
 		}
 			System.out.println("The result of the add operation on the two matrices is as follows: " + "\n");
@@ -73,11 +74,12 @@ public class genericMatrix <T extends Number> {
 		int rows = this.matrixRows;
 		int columns = this.matrixColumns;
 
-		T summation;
+		double summation = 0.0;
 
 		for(int i = 0; i < rows; i++){
 			for(int j = 0; j < columns; j++){
-				summation += this.data[i][j];
+				
+				summation += (this.data[i][j]).doubleValue();
 
 			}
 		}
@@ -86,30 +88,29 @@ public class genericMatrix <T extends Number> {
 
 	}
 	
-	public static void main()
+	public static void main(String[] args)
 	{
 		//genericMatrix.read;
 		//genericMatrix.write;
-		int input = 2;
-		int input2 = 3;
-		int input3 = 4;  	//test for add matrix with different rows/columns
-		int input4 = 5;		//==
+		int input = 2, input2 = 3, input3 = 4, input4 = 5;  	//test for add matrix with different rows/columns
 		
 
 		Scanner scaninput = new Scanner(System.in);
 
 		System.out.println("Please enter what the dimensions of your matrix are (n rows, and m columns). Enter n then m: ");
-		String[] ln = scaninput.nextLine().split("");
+		String[] ln = scaninput.nextLine().split(",");
 
-		//input = ln[0];
-		//input2 = ln[1];
+		Integer a = new Integer(ln[0]);
+		Integer b = new Integer(ln[1]);
+		input = a.intValue();
+		input2 = b.intValue();
 
 		//type
 		
 		
-		//genericMatrix<> usermat1 = new genericMatrix<>(input, input2);
+		genericMatrix<Integer> usermat1 = new genericMatrix<>(input, input2);
 
-		//usermat1.genericRead(input, input2); 			//tests for genericRead
+		usermat1.genericRead(input, input2); 			//tests for genericRead
 		//usermat2.genericRead(input, input2);			//==
 		//usermat1.genericWrite();		//tests for genericWrite
 		//usermat2.genericWrite();		//==
