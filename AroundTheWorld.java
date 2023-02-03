@@ -46,7 +46,7 @@ public class AroundTheWorld {
 		var myItinerary = new Itinerary(data);
 
         System.out.println("** Demonstrate formatByArrival");
-        //System.out.println(myItinerary.formatByArrival());
+        System.out.println(myItinerary.formatByArrival());
 
         // Add a blank line before the next output - 
         // does not end with a newline character.
@@ -73,12 +73,12 @@ public class AroundTheWorld {
 
         System.out.println("** Demonstrate getters and setters");
         System.out.println();
-		array[4].setDeparture("2023-01-10");
-		array[4].setArrival("2023-01-10");
-		System.out.println("--" + array[4].getArrival() + "--");
-		System.out.println("--" + array[4].getDeparture() + "--");
-		System.out.println("--" + array[4].getCity() + "--");
-		System.out.println("--" + array[4].getCountry() + "--");
+		 array[4].setDeparture("2023-01-10");
+		 array[4].setArrival("2023-01-10");
+		 System.out.println("--" + array[4].getArrival() + "--");
+		 System.out.println("--" + array[4].getDeparture() + "--");
+		 System.out.println("--" + array[4].getCity() + "--");
+		 System.out.println("--" + array[4].getCountry() + "--");
 
         System.out.println("** Demonstrate content of byDate");
 		//var dateArray = myItinerary.byDate();

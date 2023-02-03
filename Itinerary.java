@@ -36,10 +36,60 @@ public class Itinerary {
 		
     }
 
-   //public String formatByArrival() {
+   public String formatByArrival() {
+   		int i = 0;
+		String arrival = trips[i].getArrival();
+		
+		System.out.println("Year (2021)");
+		while (Trip.getYear(arrival) == 2021)
+		{
+			if(i == trips.length)
+				break;
+			if(trips[i] == null)
+				break;
+			arrival = trips[i].getArrival();
+			System.out.println("----" + trips[i].getCity() + " (City), " + 
+			trips[i].getCountry() + " (Country) (Place)");
+			i++;
+		
+		}
+
+		if(Trip.getYear(arrival) == 2022)
+		System.out.println("Year (2022)");
+		{
+			while (Trip.getYear(arrival) == 2022)
+			{
+			if(i == trips.length)
+				break;
+			if(trips[i] == null)
+				break;
+			arrival = trips[i].getArrival();
+			System.out.println("----" + trips[i].getCity() + " (City), " + 
+			trips[i].getCountry() + " (Country) (Place)");
+			i++;
+			}
+		}
+
+		if(Trip.getYear(arrival) == 2023){
+		System.out.println("Year (2023)");
+		while (Trip.getYear(arrival) == 2023)
+			{
+			if(i == trips.length)
+				break;
+			if(trips[i]==null)
+				break;
+			arrival = trips[i].getArrival();
+			System.out.println("----" + trips[i].getCity() + " (City), " + 
+			trips[i].getCountry() + " (Country) (Place)");
+			i++;
+			}
+		}	
+		String returning ="";
+		return returning;
+
 		
 		
-    //}
+   	}
 
     // The first array holds years (2021-2023).
     // The second array holds months.
